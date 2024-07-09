@@ -46,6 +46,8 @@
       padding-top: 20%;
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
@@ -106,6 +108,7 @@
       <p><a href="#about"
           class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Take a look
           at the problems</a></p>
+      
     </div>
     <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
       <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -346,7 +349,11 @@
           and erosive power along the river are also essential. These measurements provide a comprehensive understanding
           of the physical processes of erosion occurring within the water body itself.</p>
       </div>
+     
       <div class="w3-col m6">
+        <div>
+          <canvas id="lineChart" width="20" height="10"></canvas>
+        </div>
         <p class="w3-wide">Flow velocity</p>
         <div class="w3-grey">
           <div class="w3-container w3-dark-grey w3-center" style="width:90%">8 mph</div>
@@ -366,10 +373,6 @@
         <p class="w3-wide">Channel Slope</p>
         <div class="w3-grey">
           <div class="w3-container w3-dark-grey w3-center" style="width:90%">0.01 %</div>
-        </div>
-        <p class="w3-wide">Discharge</p>
-        <div class="w3-grey">
-          <div class="w3-container w3-dark-grey w3-center" style="width:75%">209,000 (m³/s)</div>
         </div>
       </div>
     </div>
@@ -546,6 +549,30 @@
     function w3_close() {
       mySidebar.style.display = "none";
     }
+
+    var ctx = document.getElementById('lineChart').getContext('2d');
+
+    // Create the chart
+    var lineChart = new Chart(ctx, {
+        type: 'line', // Specify that this is a line chart
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'Sample Monthly Erosion Rates',
+                data: [65, 59, 80, 81, 56, 55],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+          }
+    });
   </script>
 
 </body>
