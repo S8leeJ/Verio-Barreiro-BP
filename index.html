@@ -23,6 +23,7 @@
     html {
       height: 100%;
       line-height: 1.8;
+      
     }
 
     /* Full height image header */
@@ -45,6 +46,21 @@
     .video-responsive {
       padding-top: 20%;
     }
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0.3; 
+        color: whitesmoke; /* Text color when fully transparent */
+      }
+      50% { opacity: 1; 
+        color: lightblue; /* Text color when fully visible */
+      }
+  }
+  
+  .animated-text {
+      animation-name: fadeInOut;
+      animation-duration: 3s; /* Total duration of one cycle of the animation */
+      animation-iteration-count: infinite; /* Repeat the animation indefinitely */
+      animation-fill-mode: forwards; /* Keeps the end state of the animation */
+  }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -98,17 +114,17 @@
 
     <div class="w3-display-left w3-text-white" style="padding:48px">
 
-      <span class="w3-jumbo w3-hide-small">Verio Barreira</span><br>
+      <span class="w3-jumbo w3-hide-small animated-text">Verio Barreira</span><br>
       <span class="w3-large" style="margin-right: 20px;">
         Verio Barreira is an innovative barrier system designed to sustain the coasts of rivers and combat erosion,
         particularly in areas with poor infrastructure and close to urban centers. By stabilizing riverbanks and
         reducing sediment runoff, Verio Barreira protects communities from flooding and infrastructure damage, ensuring
         cleaner water and a safer environment.
       </span>
-      <p><a href="#about"
+      <p><a href="#Problems"
           class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Take a look
           at the problems</a></p>
-      
+
     </div>
     <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
       <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -133,7 +149,7 @@
           <iframe src="https://www.youtube.com/embed/JkaMM0nXads?si=wZilRn5O2VmPkud_" frameborder="0"
             allowfullscreen></iframe>
         </div>
-        <p class="w3-large">Impact from erosion</p>
+        <p class="w3-large">Community impact from erosion</p>
         <p>Soil erosion is a significant environmental challenge in Bangladesh, with profound impacts on its landscape,
           economy, and population. The country’s unique geographical features and socio-economic conditions contribute
           to the severity of the problem.
@@ -154,7 +170,7 @@
           <iframe src="https://www.youtube.com/embed/jB9O0hxOInk?si=8E3AUW1Qpo4SQPxL" frameborder="0"
             allowfullscreen></iframe>
         </div>
-        <p class="w3-large">Design</p>
+        <p class="w3-large">Damage to infrastructure and cities</p>
         <p>The City of Milton has been involved in activities that have caused significant erosion of the riverbank,
           leading to the loss of land for local property owners. These activities, including unregulated construction,
           inadequate stormwater management, and improper waste disposal, have resulted in negligent trespass and
@@ -166,7 +182,7 @@
           <iframe src="https://www.youtube.com/embed/8MRwKZ4thGM?si=qLPwO5jywjmhd7SQ" frameborder="0"
             allowfullscreen></iframe>
         </div>
-        <p class="w3-large">Flash Floods</p>
+        <p class="w3-large">Loss of life due to fluvial floods</p>
         <p>Switzerland, known for its picturesque landscapes and mountainous terrain, occasionally faces natural
           disasters
           such as flash floods. These sudden and intense flooding events can cause widespread damage and pose
@@ -240,7 +256,7 @@
         <p>
           It features a composite structure combining durable materials like reinforced concrete and eco-friendly
           geotextiles with natural elements such as rocks and vegetation. The concrete provides strength and longevity,
-          while the geotextiles enhance soil stability and water permeability. The integration of native plants not only
+          and the integration of native plants not only
           helps anchor the soil but also restores natural habitats, promoting biodiversity. The barrier is modular and
           adaptable, allowing for customized configurations to suit various environmental conditions and site-specific
           requirements. Its design prioritizes both structural integrity and ecological harmony, ensuring effective
@@ -313,17 +329,22 @@
 
     <div class="w3-third">
       <span class="w3-xxlarge">Enhanced Stakeholder Collaboration</span>
+      <img src="./Images/S2.JPG" alt="Mike" style="width:80%; border-radius: 50%; margin-bottom: 3%; margin-top: 3%">
       <br>Strengthen partnerships with key stakeholders to amplify our impact. Collaborative efforts will extend our
       reach and foster knowledge exchange.
     </div>
     <div class="w3-third">
       <span class="w3-xxlarge">Tech-Driven
         Monitoring</span>
+      <img src="./Images/S1.JPG" alt="Mike" style="width:80%; border-radius: 50%; margin-bottom: 3%; margin-top: 3%">
+
       <br>Embrace innovative technologies for streamlined data collection and real-time insights, ensuring a dynamic
       approach to SDG progress tracking.
     </div>
     <div class="w3-third">
       <span class="w3-xxlarge">Community Engagement Initiatives</span>
+      <img src="./Images/S3.png" alt="Mike" style="width:80%; border-radius: 50%; margin-bottom: 3%; margin-top: 3%">
+
       <br>Implement targeted community engagement initiatives to increase awareness and involvement in SDGs.
     </div>
 
@@ -335,7 +356,7 @@
   <div class="w3-container w3-padding-64" style="background-color: rgb(238, 243, 204)" id="data">
     <div class="w3-row-padding">
       <div class="w3-col m6">
-        <h3>Data that is collected</h3>
+        <h3>Data collected</h3>
         <p>When focusing on factors directly in the water for measuring river erosion, key aspects include flow
           velocity, discharge, sediment load, water depth, turbidity, bed material composition, shear stress, and
           channel slope. Measuring flow velocity with flow meters or Doppler devices helps understand the energy
@@ -349,7 +370,7 @@
           and erosive power along the river are also essential. These measurements provide a comprehensive understanding
           of the physical processes of erosion occurring within the water body itself.</p>
       </div>
-     
+
       <div class="w3-col m6">
         <div>
           <canvas id="lineChart" width="20" height="10"></canvas>
@@ -366,19 +387,11 @@
         <div class="w3-grey">
           <div class="w3-container w3-dark-grey w3-center" style="width:75%">1,000 NTU</div>
         </div>
-        <p class="w3-wide">Shear Stress</p>
-        <div class="w3-grey">
-          <div class="w3-container w3-dark-grey w3-center" style="width:75%"> 0.1 to 2 PA</div>
-        </div>
-        <p class="w3-wide">Channel Slope</p>
-        <div class="w3-grey">
-          <div class="w3-container w3-dark-grey w3-center" style="width:90%">0.01 %</div>
-        </div>
       </div>
     </div>
   </div>
   <!-- Team Section -->
-  <div class="w3-container" style="padding:128px 16px; background-color: rgb(255, 255, 255)" id="education" >
+  <div class="w3-container" style="padding:128px 16px; background-color: rgb(255, 255, 255)" id="education">
     <h3 class="w3-center">EDUCATION</h3>
     <p class="w3-center w3-large">Courses updated and regulated for education regarding topics related to Verio Barreira
     </p>
@@ -432,10 +445,11 @@
   </div>
 
   <!-- Pricing Section -->
-  <div class="w3-container w3-center" style="padding:128px 16px; background-color:rgba(115,168,172,0.5)" id="pricing">
-    <h3>HOW TO HELP US</h3>
-    <p class="w3-large">Help us with the resources we need to keep our rivers healthy</p>
-    <div class="w3-row-padding" style="margin-top:64px">
+  <div class="w3-container w3-center" style="padding:128px 16px; background-image: url('./Images/river.jpeg'); background-size: cover; background-position: center; background-blend-mode: whiten; background-color: rgba(0, 0, 0, 0.5);" id="pricing">
+    <div style="color: white">
+      <h3><strong>HELP US TODAY</strong></h3>
+    </div>
+     <div class="w3-row-padding" style="margin-top:64px">
       <div class="w3-third w3-section">
         <ul class="w3-ul w3-white w3-hover-shadow">
           <li class="w3-light-grey w3-xlarge w3-padding-32">Donate to us today</li>
@@ -554,24 +568,24 @@
 
     // Create the chart
     var lineChart = new Chart(ctx, {
-        type: 'line', // Specify that this is a line chart
-        data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [{
-                label: 'Sample Monthly Erosion Rates',
-                data: [65, 59, 80, 81, 56, 55],
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
+      type: 'line', // Specify that this is a line chart
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+          label: 'Sample Monthly Erosion Rates',
+          data: [65, 59, 80, 81, 56, 55],
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
           }
+        }
+      }
     });
   </script>
 
